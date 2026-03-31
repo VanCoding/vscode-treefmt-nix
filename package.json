@@ -1,0 +1,50 @@
+{
+  "name": "vscode-treefmt-nix",
+  "version": "1.0.0",
+  "description": "Format files using treefmt-nix",
+  "categories": [
+    "Formatters",
+    "Other"
+  ],
+  "publisher": "VanCoding",
+  "files": [
+    "dist/**",
+    "LICENSE.md"
+  ],
+  "type": "module",
+  "main": "./dist/extension.js",
+  "scripts": {
+    "build": "rolldown -c rolldown.config.ts",
+    "package": "pnpm build && vsce package --no-dependencies --allow-missing-repository --out extension.vsix",
+    "install-extension": "npm run package && code --install-extension extension.vsix"
+  },
+  "devDependencies": {
+    "@types/node": "25.x",
+    "@types/vscode": "^1.90.0",
+    "rolldown": "1.0.0-rc.12",
+    "typescript": "^5.9.3"
+  },
+  "contributes": {
+    "commands": [
+      {
+        "command": "extension.runTreefmt",
+        "title": "Run Treefmt"
+      }
+    ]
+  },
+  "activationEvents": [
+    "onStartupFinished"
+  ],
+  "engines": {
+    "vscode": "^1.90.0"
+  },
+  "configuration": [
+    {
+      "title": "treefmt",
+      "properties": {}
+    }
+  ],
+  "dependencies": {
+    "prisma": "^7.6.0"
+  }
+}
