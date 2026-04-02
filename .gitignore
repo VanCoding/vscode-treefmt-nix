@@ -2,3 +2,4 @@
 /dist
 /extension.vsix
 /node_modules
+/.envrc
