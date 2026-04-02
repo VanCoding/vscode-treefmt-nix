@@ -33,6 +33,14 @@ This repository also uses treefmt-nix. You can look at it's code for an example.
   npm run install-extension
   ```
 
+### Publishing new versions
+
+- Build the extension
+  ```
+  npm run package
+  ```
+- Upload the version on https://marketplace.visualstudio.com/manage/publishers/vancoding
+
 ## Attributions
 
 This project was derived from the [treefmt-vscode](https://github.com/isbecker/treefmt-vscode) project by isbecker, and thus inherited it's GPL license.
