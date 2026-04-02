@@ -7,6 +7,9 @@
   "files": ["dist/**", "LICENSE.md"],
   "type": "module",
   "main": "./dist/extension.js",
+  "repository": {
+    "url": "https://github.com/VanCoding/vscode-treefmt-nix"
+  },
   "scripts": {
     "test": "tsgo --noEmit",
     "build": "npm run test && rolldown -c rolldown.config.ts",
