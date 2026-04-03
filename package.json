@@ -4,9 +4,10 @@
   "description": "Format files using treefmt-nix",
   "categories": ["Formatters", "Other"],
   "publisher": "VanCoding",
-  "files": ["dist/**", "LICENSE.md"],
+  "files": ["dist/**", "LICENSE.md", "logo.png"],
   "type": "module",
   "main": "./dist/extension.js",
+  "icon": "./logo.png",
   "repository": {
     "url": "https://github.com/VanCoding/vscode-treefmt-nix"
   },
