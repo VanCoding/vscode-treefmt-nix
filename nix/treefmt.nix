@@ -1,12 +1,10 @@
 { inputs, ... }:
 {
-  perSystem =
-    { pkgs, ... }:
-    {
-      packages.treefmt =
-        (inputs.treefmt-nix.lib.evalModule pkgs {
-          programs.nixfmt.enable = true;
-          programs.oxfmt.enable = true;
-        }).config.build.wrapper;
-    };
+  imports = [
+    inputs.treefmt-nix.flakeModule
+  ];
+  perSystem.treefmt = {
+    programs.nixfmt.enable = true;
+    programs.oxfmt.enable = true;
+  };
 }

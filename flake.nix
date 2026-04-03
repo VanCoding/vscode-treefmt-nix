@@ -14,13 +14,17 @@
       ];
       imports = [ ./nix/treefmt.nix ];
       perSystem =
-        { pkgs, self', ... }:
+        {
+          pkgs,
+          config,
+          ...
+        }:
         {
           devShells.default = pkgs.mkShell {
             buildInputs = [
               pkgs.nodejs
               pkgs.pnpm
-              self'.packages.treefmt
+              config.treefmt.build.wrapper
               pkgs.typescript-go
               pkgs.vsce
             ];
