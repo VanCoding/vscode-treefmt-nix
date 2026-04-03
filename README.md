@@ -1,3 +1,7 @@
+<p align="center">
+  <img src="logo.png" alt="vscode-treefmt-nix logo" width="180" />
+</p>
+
 # vscode-treefmt-nix
 
 A VSCode extension to format all files using [trefmt-nix](https://github.com/numtide/treefmt-nix).
@@ -44,3 +48,5 @@ This repository also uses treefmt-nix. You can look at it's code for an example.
 ## Attributions
 
 This project was derived from the [treefmt-vscode](https://github.com/isbecker/treefmt-vscode) project by isbecker, and thus inherited it's GPL license.
+
+The logo was generated with Google Gemini.
