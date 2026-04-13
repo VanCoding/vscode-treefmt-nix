@@ -27,6 +27,8 @@
               config.treefmt.build.wrapper
               pkgs.typescript-go
               pkgs.vsce
+              pkgs.oxfmt
+              pkgs.oxlint
             ];
           };
         };

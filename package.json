@@ -18,7 +18,7 @@
   "type": "module",
   "main": "./dist/extension.js",
   "scripts": {
-    "test": "tsgo --noEmit",
+    "test": "tsgo --noEmit && treefmt --fail-on-change && oxlint",
     "build": "npm run test && rolldown -c rolldown.config.ts",
     "package": "pnpm build && vsce package --no-dependencies --allow-missing-repository --out extension.vsix",
     "install-extension": "npm run package && code --install-extension extension.vsix"

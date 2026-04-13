@@ -22,7 +22,7 @@ export const registerFormatProviders = async (context: vscode.ExtensionContext) 
   );
 };
 
-export const formatActiveDocument = async (ctx: vscode.ExtensionContext) => {
+export const formatActiveDocument = async (_context: vscode.ExtensionContext) => {
   logError("no active editor");
   const editor = vscode.window.activeTextEditor;
   if (!editor) {
