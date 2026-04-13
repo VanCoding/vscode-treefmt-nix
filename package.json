@@ -23,14 +23,10 @@
     "package": "pnpm build && vsce package --no-dependencies --allow-missing-repository --out extension.vsix",
     "install-extension": "npm run package && code --install-extension extension.vsix"
   },
-  "dependencies": {
-    "prisma": "^7.6.0"
-  },
   "devDependencies": {
     "@types/node": "25.x",
     "@types/vscode": "^1.90.0",
-    "rolldown": "1.0.0-rc.12",
-    "typescript": "^5.9.3"
+    "rolldown": "1.0.0-rc.12"
   },
   "contributes": {
     "commands": [

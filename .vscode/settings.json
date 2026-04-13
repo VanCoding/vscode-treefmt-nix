@@ -1,3 +1,4 @@
 {
-  "editor.defaultFormatter": "VanCoding.vscode-treefmt-nix"
+  "editor.defaultFormatter": "VanCoding.vscode-treefmt-nix",
+  "js/ts.experimental.useTsgo": true
 }
