@@ -1,10 +1,15 @@
 import { execFile } from "child_process";
 import { log } from "./logging";
 
-export async function formatWithTreefmt(
-  filePath: string,
-  text: string,
-): Promise<
+export async function formatWithTreefmt({
+  basePath,
+  filePath,
+  text,
+}: {
+  basePath: string;
+  filePath: string;
+  text: string;
+}): Promise<
   | {
       sucess: true;
       formattedCode: string;
@@ -19,6 +24,7 @@ export async function formatWithTreefmt(
     const childProcess = execFile(
       "treefmt",
       ["--stdin", filePath],
+      { cwd: basePath },
 
       (error, stdout, stderr) => {
         log("treefmt process exited");

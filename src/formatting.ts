@@ -47,7 +47,17 @@ export const formatActiveDocument = async (ctx: vscode.ExtensionContext) => {
 
 const formatAndLog = async (filePath: string, text: string): Promise<string | null> => {
   log(`formatting file ${filePath}`);
-  const result = await formatWithTreefmt(filePath, text);
+
+  const projectRoot = vscode.workspace.workspaceFolders?.[0].uri.fsPath ?? "";
+  const filepathRelativeToProjectRoot = projectRoot
+    ? filePath.replace(projectRoot + "/", "")
+    : filePath;
+
+  const result = await formatWithTreefmt({
+    basePath: projectRoot,
+    filePath: filepathRelativeToProjectRoot,
+    text,
+  });
   if (!result.sucess) {
     logError(`formatting failed: ${result.errorMessage}`);
     return null;
