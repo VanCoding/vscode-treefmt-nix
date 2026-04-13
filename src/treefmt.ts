@@ -1,49 +1,49 @@
-import { execFile } from 'child_process'
-import { log } from './logging'
+import { execFile } from "child_process";
+import { log } from "./logging";
 
 export async function formatWithTreefmt(
   filePath: string,
-  text: string
+  text: string,
 ): Promise<
   | {
-      sucess: true
-      formattedCode: string
+      sucess: true;
+      formattedCode: string;
     }
   | {
-      sucess: false
-      errorMessage: string
+      sucess: false;
+      errorMessage: string;
     }
 > {
   return new Promise((resolve) => {
-    log('starting treefmt process')
+    log("starting treefmt process");
     const childProcess = execFile(
-      'treefmt',
-      ['--stdin', filePath],
+      "treefmt",
+      ["--stdin", filePath],
 
       (error, stdout, stderr) => {
-        log('treefmt process exited')
+        log("treefmt process exited");
         if (error) {
           resolve({
             sucess: false,
             errorMessage: stderr,
-          })
-          return
+          });
+          return;
         }
         resolve({
           sucess: true,
           formattedCode: stdout,
-        })
-      }
-    )
+        });
+      },
+    );
 
     if (childProcess.stdin) {
-      childProcess.stdin.end(text)
+      childProcess.stdin.end(text);
     } else {
-      log("couldn't start treefmt process")
+      log("couldn't start treefmt process");
       resolve({
         sucess: false,
-        errorMessage: 'could not start treefmt process',
-      })
+        errorMessage: "could not start treefmt process",
+      });
     }
-  })
+  });
 }

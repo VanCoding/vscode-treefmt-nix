@@ -1,1 +1,1 @@
-export const EXTENSION_NAME = 'vscode-treefmt-nix'
+export const EXTENSION_NAME = "vscode-treefmt-nix";
