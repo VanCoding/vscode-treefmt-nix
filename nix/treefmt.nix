@@ -6,5 +6,8 @@
   perSystem.treefmt = {
     programs.nixfmt.enable = true;
     programs.oxfmt.enable = true;
+    settings.excludes = [
+      "package.json"
+    ];
   };
 }
