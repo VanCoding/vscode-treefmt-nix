@@ -24,9 +24,9 @@
     "install-extension": "npm run package && code --install-extension extension.vsix"
   },
   "devDependencies": {
-    "@types/node": "25.x",
-    "@types/vscode": "^1.90.0",
-    "rolldown": "1.0.0-rc.12"
+    "@types/node": "~26.4.1",
+    "@types/vscode": "1.90.0",
+    "rolldown": "1.2.7"
   },
   "contributes": {
     "commands": [
