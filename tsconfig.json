@@ -3,7 +3,6 @@
     "types": ["node"],
     "module": "esnext",
     "moduleResolution": "bundler",
-    "rootDir": "src",
     "strict": true
   }
 }
